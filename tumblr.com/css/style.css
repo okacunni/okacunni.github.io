@@ -9,3 +9,7 @@
   font-weight: bold;
   line-height: 1.3;
 }
+
+.nav-wrapper .nav-item .label {
+  font-size: 13px;
+}
