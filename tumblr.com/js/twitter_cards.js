@@ -1,34 +1,42 @@
 (function(){
 
-// <meta name="twitter:card" content="summary" />
-// <meta name="twitter:site" content="@okacunni">
-// <meta name="twitter:creator" content="@Nametty">
-// <meta name="twitter:creator:id" content="86489774">
-// {block:PermalinkPage}
-// <meta name="twitter:title" content="{block:PostSummary}{PostSummary}{/block:PostSummary}">
-// {/block:PermalinkPage}
-// {block:Description}
-// <meta name="twitter:description" content="{MetaDescription}">
-// {/block:Description}
-// <meta name="twitter:image" content="">
-  console.log(parseMeta);
+  var arrMeta = parseMeta();
+  var head = document.getElementsByTagName("head")[0];
+  for(key in arrMeta){
+    console.log(key);
+    var meta = document.createElement("meta");
+    meta.setAttribute("name", "twitter:" + key);
+    meta.setAttribute("content", arrMeta[key]);
+    head.appendChild(meta);
+  };
 
   function parseMeta(){
-    var keys = ["site_name","title","description","image","url"]
+    var keys = [
+      "site_name",
+      "title",
+      "description",
+      "image",
+      "url"
+    ];
     var arr = {};
     var meta = document.getElementsByTagName('meta');
-    for(i=0; i<meta.length; i++){
-      keys.forEach(function(val,idx){
-        arr.val = getMetaContent(meta[i], val);
-      });
-    }
+
+    keys.forEach(function(key,idx){
+      for (var i=0; i<meta.length; i++){
+        var val = getMetaContent(meta[i], key);
+        if (val){
+          arr[key] = val;
+          break;
+        }
+      }
+    });
     return arr;
   }
 
   function getMetaContent(meta, key){
     if(meta.getAttribute("property") == "og:" + key)
     {
-      return meta.getAttribute("content")
+      return meta.getAttribute("content");
     }
     return "";
   }
