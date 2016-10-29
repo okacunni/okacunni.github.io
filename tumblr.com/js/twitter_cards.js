@@ -3,7 +3,6 @@
   var arrMeta = parseMeta();
   var head = document.getElementsByTagName("head")[0];
   for(key in arrMeta){
-    console.log(key);
     var meta = document.createElement("meta");
     meta.setAttribute("name", "twitter:" + key);
     meta.setAttribute("content", arrMeta[key]);
