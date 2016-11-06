@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+h1,h2 {
+  color: #000;
+}
+
 .blog-title {
   font-size: 2.2rem;
 }
@@ -11,5 +15,23 @@
 }
 
 .nav-wrapper .nav-item .label {
+  color: #35c100;
   font-size: 13px;
+}
+
+.read_more_container {
+  text-align: center;
+}
+
+.read_more {
+  display: block;
+  padding: 10px;
+  background-color: #fff;
+  border: 2px solid #a7a7a7;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.read_more:hover {
+  border-color: #8c8c8c;
 }
