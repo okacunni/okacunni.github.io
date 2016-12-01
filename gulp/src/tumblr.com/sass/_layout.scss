@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.read_more_container {
+  text-align: center;
+}
+
+.read_more {
+  display: block;
+  padding: 10px;
+  background-color: #fff;
+  border: 2px solid #a7a7a7;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.read_more:hover {
+  border-color: #8c8c8c;
+}
