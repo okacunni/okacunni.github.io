@@ -17,7 +17,7 @@ var TUMBLR_SRC_SASS_DIR = SOURCE_DIR + TUMBLR_DIR + SASS_DIR;
 var TUMBLR_SRC_CSS_DIR  = SOURCE_DIR + TUMBLR_DIR + CSS_DIR;
 var TUMBLR_SCSS_FILE = TUMBLR_SRC_SASS_DIR + "*.scss";
 var TUMBLR_CSS_FILE  = TUMBLR_SRC_CSS_DIR + "*.css";
-var TUMBLR_CSS_DEST_DIR = TUMBLR_ROOT + CSS_DIR;
+var TUMBLR_CSS_DEST_DIR = TUMBLR_ROOT_DIR + CSS_DIR;
 
 gulp.task("compass-tumblr", function(){
   gulp.src([TUMBLR_SCSS_FILE])
@@ -46,6 +46,6 @@ gulp.task("minify-tumblr", function(){
       ;
 });
 
-gulp.task("default-tumblr", function(){
+gulp.task("tumblr", function(){
   gulp.watch([TUMBLR_SCSS_FILE], ["compass-tumblr", "minify-tumblr"]);
 });
