@@ -2,6 +2,7 @@
 
 var gulp    = require("gulp");
 var plumber = require("gulp-plumber");
+var wait    = require("gulp-wait");
 var rename  = require('gulp-rename');
 var header  = require('gulp-header');
 var compass = require("gulp-compass");
@@ -39,6 +40,7 @@ gulp.task("compass-tumblr", function(){
 gulp.task("refine-tumblr", function(){
   gulp.src(TUMBLR_SRC_CSS_FILE)
     .pipe(plumber())
+    .pipe(wait(1000))
     .pipe(header("@charset \"UTF-8\";\n\n"))
     .pipe(minifyCss({
       'keepBreaks': false
