@@ -16,8 +16,10 @@
 
   .fixed-header {
 
+    .tmblr-iframe--app-cta-button,
     .tmblr-iframe--follow-teaser,
-    .tmblr-iframe--controls {
+    .tmblr-iframe--controls,
+    .tmblr-iframe--unified-controls {
       display: none;
     }
 

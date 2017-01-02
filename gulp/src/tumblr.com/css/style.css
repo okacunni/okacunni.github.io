@@ -48,8 +48,10 @@ h1, h2 {
  * for iPhone 6 Plus
  */
 @media screen and (max-width: 736px) {
+  .fixed-header .tmblr-iframe--app-cta-button,
   .fixed-header .tmblr-iframe--follow-teaser,
-  .fixed-header .tmblr-iframe--controls {
+  .fixed-header .tmblr-iframe--controls,
+  .fixed-header .tmblr-iframe--unified-controls {
     display: none;
   }
   .fixed-header .header-wrapper {
