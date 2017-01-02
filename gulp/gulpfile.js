@@ -2,7 +2,6 @@
 
 var gulp    = require("gulp");
 var plumber = require("gulp-plumber");
-var wait    = require("gulp-wait");
 var rename  = require('gulp-rename');
 var header  = require('gulp-header');
 var compass = require("gulp-compass");
@@ -17,11 +16,12 @@ var TUMBLR_DIR  = "tumblr.com/";
 var TUMBLR_ROOT_DIR = "../" + TUMBLR_DIR;
 var TUMBLR_SRC_SASS_DIR = SOURCE_DIR + TUMBLR_DIR + SASS_DIR;
 var TUMBLR_SRC_CSS_DIR  = SOURCE_DIR + TUMBLR_DIR + CSS_DIR;
-var TUMBLR_SRC_SCSS_FILE = TUMBLR_SRC_SASS_DIR + "*.scss";
-var TUMBLR_SRC_CSS_FILE  = TUMBLR_SRC_CSS_DIR + "*.css";
 var TUMBLR_DEST_CSS_DIR  = TUMBLR_ROOT_DIR + CSS_DIR;
 
-gulp.task("compass-tumblr", function(){
+var TUMBLR_SRC_SCSS_FILE = TUMBLR_SRC_SASS_DIR + "*.scss";
+var TUMBLR_SRC_CSS_FILE  = TUMBLR_SRC_CSS_DIR + "*.css";
+
+gulp.task("compile-tumblr", function(){
   gulp.src([TUMBLR_SRC_SCSS_FILE])
     .pipe(plumber({
       errorHandler: function(error) {
@@ -33,14 +33,6 @@ gulp.task("compass-tumblr", function(){
       sass: TUMBLR_SRC_SASS_DIR,
       css: TUMBLR_SRC_CSS_DIR
     }))
-    .pipe(gulp.dest(TUMBLR_SRC_CSS_DIR))
-    ;
-});
-
-gulp.task("refine-tumblr", function(){
-  gulp.src(TUMBLR_SRC_CSS_FILE)
-    .pipe(plumber())
-    .pipe(wait(1000))
     .pipe(header("@charset \"UTF-8\";\n\n"))
     .pipe(minifyCss({
       'keepBreaks': false
@@ -50,7 +42,7 @@ gulp.task("refine-tumblr", function(){
     ;
 });
 
-gulp.task("build-tumblr", ["compass-tumblr", "refine-tumblr"], function(){
+gulp.task("build-tumblr", ["compile-tumblr"], function(){
   console.log("build complete");
 });
 
