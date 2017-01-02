@@ -109,7 +109,7 @@ h1, h2 {
     padding: 0;
   }
   .fixed-header .header-wrapper .nav-menu {
-    padding: 0;
+    padding: 0 12px;
     height: 100%;
   }
   .fixed-header .header-wrapper .nav-menu ul {
