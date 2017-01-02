@@ -14,45 +14,110 @@
  */
 @media screen and (max-width: 736px) {
 
-  .header-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    width: 100%;
-    height: 54px;
-    background-color: #FFF;
-  }
+  .fixed-header {
 
-  .header-image-wrapper {
-    display: none;
-  }
-
-  .blog-title-wrapper {
-    @include display-flex;
-    @include flex-direction(column);
-    @include justify-content(flex-start);
-
-    .blog-title {
+    .tmblr-iframe--follow-teaser,
+    .tmblr-iframe--controls {
       display: none;
     }
 
-    .description {
-      display: none;
-    }
-  }
+    .header-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 100%;
+      // height: 54px;
+      // background-color: #FFF;
 
-  .avatar-wrapper {
-    position: relative;
-    top: 0;
-    left: 0;
-    margin: 0;
-    height: 48px;
+      .top-blog-header {
+        background-color: #FAFAFA;
+        border-bottom: 1px solid rgba(0,0,0,.08);
+      }
 
-    .user-avatar {
-      width: 36px;
-      height: 36px;
-      background-size: 36px;
+      .header-image-wrapper {
+        display: none;
+      }
+
+      .blog-title {
+        display: none;
+      }
+
+      .description {
+        display: none;
+      }
+
+      .avatar-wrapper {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0;
+
+        .user-avatar {
+          width: 36px;
+          height: 36px;
+          background-size: 36px;
+        }
+      }
+
+      .blog-title-wrapper {
+        @include display-flex;
+        @include flex-direction(row);
+        @include justify-content(flex-start);
+        @include align-items(center);
+
+        &.content {
+          padding: 0;
+        }
+      }
+
+      .title-group {
+        width: 100%;
+      }
+
+      .nav-wrapper {
+        width: 100%;
+        height: 100%;
+
+        &.content {
+          padding: 0;
+        }
+      }
+
+      .nav-menu {
+        padding: 0 16px;
+        height: 100%;
+
+        ul {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+
+      .inline-nav {
+        @include display-flex;
+        @include flex-direction(row);
+        @include justify-content(space-between);
+        @include align-items(center);
+        height: 100%;
+      }
+
+      .nav-item {
+        margin: 0;
+
+        a {
+          padding: 10px 12px;
+        }
+      }
+
+      .nav-item--faq,
+      .nav-item--likes {
+        display: none;
+      }
+
+      .nav-item--archive {
+        // display: none;
+      }
     }
   }
 }
