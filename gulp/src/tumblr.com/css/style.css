@@ -133,6 +133,7 @@ h1, h2 {
   .fixed-header .header-wrapper .nav-item a {
     padding: 10px 12px;
   }
+  .fixed-header .header-wrapper .nav-item--email,
   .fixed-header .header-wrapper .nav-item--faq,
   .fixed-header .header-wrapper .nav-item--likes {
     display: none;
