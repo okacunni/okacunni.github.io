@@ -64,6 +64,7 @@
         @include display-flex;
         @include flex-direction(row);
         @include justify-content(flex-start);
+        @include align-items(center);
 
         &.content {
           padding: 0;
@@ -86,6 +87,11 @@
       .nav-menu {
         padding: 0 16px;
         height: 100%;
+
+        ul {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
       }
 
       .inline-nav {
@@ -98,8 +104,13 @@
 
       .nav-item {
         margin: 0;
+
+        a {
+          padding: 10px 12px;
+        }
       }
 
+      .nav-item--faq,
       .nav-item--likes {
         display: none;
       }
