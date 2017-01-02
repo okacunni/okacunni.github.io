@@ -33,3 +33,43 @@ h1, h2 {
 .read_more:hover {
   border-color: #8c8c8c;
 }
+
+@-ms-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+/**
+ * 737px <= w
+ * for iPhone 6 Plus
+ */
+@media screen and (max-width: 736px) {
+  .fixed-header .header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+  }
+  .fixed-header .header-wrapper .header-image-wrapper {
+    display: none;
+  }
+  .fixed-header .header-wrapper .blog-title {
+    display: none;
+  }
+  .fixed-header .header-wrapper .description {
+    display: none;
+  }
+  .fixed-header .header-wrapper .blog-title-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  .fixed-header .header-wrapper .nav-menu .nav-item--likes {
+    display: none;
+  }
+}
