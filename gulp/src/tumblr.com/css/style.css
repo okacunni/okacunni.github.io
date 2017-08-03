@@ -14,7 +14,7 @@ h1, h2 {
 
 .nav-wrapper .nav-item .label {
   color: #35c100;
-  font-size: 13px;
+  font-size: 18px;
 }
 .nav-wrapper .nav-item .label--twitter {
   text-transform: capitalize;
@@ -132,6 +132,9 @@ h1, h2 {
   }
   .fixed-header .header-wrapper .nav-item a {
     padding: 10px 12px;
+  }
+  .fixed-header .header-wrapper .nav-item .label {
+    font-size: 13px;
   }
   .fixed-header .header-wrapper .nav-item--email,
   .fixed-header .header-wrapper .nav-item--faq,
